@@ -1,0 +1,176 @@
+@-webkit-keyframes moveAuto {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes moveAuto {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+body {
+  background-color: #0D0D0D;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.container {
+  width: 80%;
+  padding: 5rem;
+  margin: 0 auto;
+}
+
+.container-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.container-cards .card {
+  position: relative;
+  width: 23%;
+  height: 500px;
+  overflow: hidden;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+  border-radius: 25px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  -webkit-filter: drop-shadow(0px 0px 35px black);
+          filter: drop-shadow(0px 0px 35px black);
+  -webkit-perspective: 5000px;
+          perspective: 5000px;
+}
+
+.container-cards .card .front, .container-cards .card .back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.container-cards .card .front-name, .container-cards .card .back-name {
+  position: absolute;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.container-cards .card .front-bg, .container-cards .card .back-bg {
+  z-index: 900;
+  position: absolute;
+  width: 101%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(13, 13, 13, 0.7);
+  -webkit-transition: background .5s;
+  transition: background .5s;
+}
+
+.container-cards .card .front img, .container-cards .card .back img {
+  height: 110%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+}
+
+.container-cards .card .back {
+  background-image: url(../img/road.gif);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.container-cards .card .back .bk-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.container-cards .card .back .avatar {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  padding: 1rem;
+  z-index: 1000;
+  width: 120px;
+  height: 120px;
+  background-image: url(../img/mini-audi.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container-cards .card .back .specifications {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  position: relative;
+  z-index: 1000;
+  margin-top: 40%;
+  padding: 1rem;
+}
+
+.container-cards .card .back .specifications-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container-cards .card .back .specifications .specification {
+  margin-bottom: 2rem;
+}
+
+.container-cards .card:hover {
+  color: #0D0D0D;
+}
+
+.container-cards .card:hover img {
+  -webkit-animation-name: moveAuto;
+          animation-name: moveAuto;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+/*# sourceMappingURL=main.css.map */
